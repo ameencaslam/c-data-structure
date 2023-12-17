@@ -23,7 +23,7 @@ void displayPolynomial(int poly[], int size)
     printf("\n");
 }
 
-int main()
+void main()
 {
     int degree;
 
@@ -33,24 +33,20 @@ int main()
     int size = degree+1;
     int poly1[size], poly2[size], result[size];
 
-    // Get coefficients for the first polynomial from the user
     printf("Enter coefficients for the first polynomial:\n");
     for (int i = degree; i >= 0; i--) {
         printf("Coefficient for x^%d: ", i);
         scanf("%d", &poly1[i]);
     }
 
-    // Get coefficients for the second polynomial from the user
     printf("Enter coefficients for the second polynomial:\n");
     for (int i = degree; i >= 0; i--) {
         printf("Coefficient for x^%d: ", i);
         scanf("%d", &poly2[i]);
     }
 
-    // Adding two polynomials
     addPolynomials(poly1, poly2, result, size);
 
-    // Displaying the result
     printf("Polynomial 1: ");
     displayPolynomial(poly1, size);
 
@@ -59,6 +55,4 @@ int main()
 
     printf("Sum: ");
     displayPolynomial(result, size);
-
-    return 0;
 }
