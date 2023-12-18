@@ -29,23 +29,32 @@ struct TreeNode *createNode (int data)
 
 void inOrder(struct TreeNode *root)
 {
-    inOrder(root->left);
-    printf("%d ",root->data);
-    inOrder(root->right);
+    if (root != NULL)
+    {
+        inOrder(root->left);
+        printf("%d ",root->data);
+        inOrder(root->right);
+    }
 }
 
 void preOrder(struct TreeNode *root)
 {
-    printf("%d ",root->data);
-    preOrder(root->left);
-    preOrder(root->right);
+    if (root != NULL)
+    {
+        printf("%d ",root->data);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
 }
 
 void postOrder(struct TreeNode *root)
 {
-    postOrder(root->left);
-    postOrder(root->right);
-    printf("%d ",root->data);
+    if (root != NULL)
+    {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d ",root->data);
+    }
 }
 
 void main()
